@@ -1,4 +1,4 @@
-var taManager = angular.module('taManager', []);
+var taManager = angular.module('tagManager', []);
 
 taManager.directive('tagManager', function() {
     return {
