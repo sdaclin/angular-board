@@ -1,7 +1,7 @@
 angular-board
 =============
 Some angular experiments + angular-tagmanager + angular-commandbar
-See examples [[http://sdaclin.github.com/angular-board]]
+See examples at : http://sdaclin.github.com/angular-board
 
 tagManager
 -------------
