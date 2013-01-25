@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Angular Demo App</title>
+    <meta charset="utf-8">
+    <title>Angular-Board - Demo App</title>
+    <meta name="description" content="AngularJS TagManager CommandBar directives">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
     <!-- Twitter bootstrap 2.2.2 dependencies -->
     <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.2/css/bootstrap.min.css" rel="stylesheet"/>
 
@@ -14,17 +18,125 @@
     <!-- TagManager dependency -->
     <script src="https://raw.github.com/sdaclin/angular-board/master/js/angular/tagmanager.angular.js" type="text/javascript"></script>
 
-    <!-- Demo Dependancies -->
+    <!-- Demo purpose dependencies -->
     <script src="js/angular/js/angular/app.angular.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/demo.css"/>
 </head>
 <body ng-app="app">
-<h1>Angular Directives</h1>
-<h2>tagManager</h2>
-<div ng-controller="TagManagerCtrl">
-    <tag-manager name="tags" ng-model="tags"></tag-manager>
-    <hr/>
-    <span class="badge" ng-repeat="tag in tags">{{tag}}</span>
-</div>
+<header class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="#">Angular-Board</a>
+            <div class="nav-collapse">
+                <ul class="nav">
+                    <li><a href="#tagManager">tagManager</a></li>
+                    <li><a href="#commandBar">commandBar</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<div role="main">
 
+    <header class="hero-unit" id="overview">
+        <div class="container">
+            <h1>
+                AngularJS Board
+            </h1>
+
+            <p>Client-side TagManager and CommandBar directives written in pure <strong><a href="http://angularjs.org">AngularJS</a></strong> by <strong><a
+                    href="https://plus.google.com/116739315062609923510">Sylvain Daclin</a></strong></p>
+
+            <p class="btn-group">
+                <a class="btn btn-large" href="https://github.com/sdaclin/angular-board"><i class="icon-github"></i>Code on Github</a>
+                <a class="btn btn-large btn-primary" href="https://github.com/sdaclin/angular-board/archive/master.zip">
+                    <i class="icon-download-alt icon-white"></i>Download <small>(master)</small>
+                </a>
+            </p>
+        </div>
+        <div class="bs-docs-social">
+            <div class="container">
+                <ul class="bs-docs-social-buttons">
+                    <li>
+                        <iframe src="http://ghbtns.com/github-btn.html?user=sdaclin&repo=angular-board&type=watch&count=true"
+                                allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+                    </li>
+                    <li>
+                        <iframe src="http://ghbtns.com/github-btn.html?user=sdaclin&repo=angular-board&type=fork&count=true"
+                                allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/share" class="twitter-share-button"
+                           data-hashtags="angularjs">Tweet</a>
+                        <script>!function (d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (!d.getElementById(id)) {
+                                js = d.createElement(s);
+                                js.id = id;
+                                js.src = "http://platform.twitter.com/widgets.js";
+                                fjs.parentNode.insertBefore(js, fjs);
+                            }
+                        }(document, "script", "twitter-wjs");</script>
+                    </li>
+                    <li>
+                        <!-- Place this tag where you want the +1 button to render. -->
+                        <div class="g-plusone" data-size="medium"></div>
+
+                        <!-- Place this tag after the last +1 button tag. -->
+                        <script type="text/javascript">
+                            (function () {
+                                var po = document.createElement('script');
+                                po.type = 'text/javascript';
+                                po.async = true;
+                                po.src = 'https://apis.google.com/js/plusone.js';
+                                var s = document.getElementsByTagName('script')[0];
+                                s.parentNode.insertBefore(po, s);
+                            })();
+                        </script>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="container container">
+
+        <section id="images">
+            <div class="page-header">
+                <h1>tagManager</h1>
+            </div>
+            <div class="row">
+                <div class="span6">
+                    <div ng-controller="TagManagerCtrl">
+                        <tag-manager ng-model="tags"></tag-manager>
+                        <hr/>
+                        These are TagManagerCtrl's $scope tags : <span class="badge" ng-repeat="tag in tags">{{tag}}</span>
+                    </div>
+                </div>
+                <div class="span6">
+                    <p>The <code>tag-manager</code> directive creates client-side tag-manager component.
+                        The directive creates an input field that reacts with comma characters between each tag.
+                        Each comma separated tag is stored in an array in tag-manager self $scope. This tag array can be accessed outside by mapping a value to <code>ng-model</code> value.<br/>
+                        Backspace key is handled to load previous tag in tag editor when tag field is empty.
+                        </p>
+
+                    <p>Example : <code>&lt;tag-manager ng-model="tags"&gt;</tag-manager></code></p>
+                    <section>
+                        From module: <a href="https://github.com/sdaclin/angular-board/blob/master/js/angular/tagmanager.angular.js">angular-board.tagManager</a>
+                    </section>
+
+                    <section>
+                        Futures improvements :
+                        <ul>
+                            <li>handle typeahead tag completion based on an ajax request.</li>
+                            <li>tags can be storred in a list or a set in order to disallow duplicated tags</li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+            <hr>
+        </section>
+    </div>
+</div>
 </body>
 </html>
