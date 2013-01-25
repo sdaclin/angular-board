@@ -13,6 +13,8 @@ taManager.directive('tagManager', function() {
             '</div>',
 
         link: function(scope, element, attrs) {
+            scope.tagField = '';
+
             // Watching update on tagField to handle new comma input
             scope.$watch('tagField', function(value){
                 if (value!= null && value.indexOf(',') > 0) {
