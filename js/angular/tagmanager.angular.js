@@ -30,7 +30,7 @@ taManager.directive('tagManager', function() {
             // Registering event on backspace or lost focus
             $(element).first('input')
                 // On backspace load the previous tag into tagField input
-                .keyup(function(e){
+                .keydown(function(e){
                 if(e.keyCode == 8){
                     scope.$apply(function() {
                         if (scope.tagField=='') {
