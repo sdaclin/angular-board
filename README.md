@@ -5,7 +5,10 @@ See examples at : http://sdaclin.github.com/angular-board
 
 tagManager
 -------------
-tagManager is a custom directive for angular to create a tagmanager component based on an angular array of tags
+tagManager is a custom directive for angular to create a tagmanager component based on an angular array of tags.
+
+ *  requires jQuery (tested with jQuery 1.8.3)
+ *  uses bootstrap 2.2.2
 
 commandBar
 -------------
